@@ -15,9 +15,7 @@ app.listen(port, function () {
 
 app.use(express.json())
 
-app.get("/health", (_, res) => {
-    res.send({ message: "server theek hy" })
-})
+
 
 //GET, POST, PUT, DELETE
 app.use('/', routes)
