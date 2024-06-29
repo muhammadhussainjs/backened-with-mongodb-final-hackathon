@@ -7,7 +7,7 @@ app.use(cors());
 
 db.connection.once('open', () => console.log("connected to db")).on("error", (err) => console.log("error connecting db -->", err))
 
-const port = process.env.PORT || 3001
+const port = 3001
 
 app.listen(port, function () {
     console.log('Server is running at port 3001')
