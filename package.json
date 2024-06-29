@@ -9,7 +9,7 @@
   },
   "name": "backened-with-mongodb-final-hackathon",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "start": "node index.mjs",
     "dev": "nodemon index.mjs"
