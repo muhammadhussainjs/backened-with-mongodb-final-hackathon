@@ -3,7 +3,7 @@
     "name": "my-app",
     "builds": [
       {
-        "src": "./index.mjs",
+        "src": "./routes/index.mjs",
         "use": "@vercel/node"
       }
     ],
