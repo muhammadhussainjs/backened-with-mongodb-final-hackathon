@@ -13,9 +13,9 @@ app.listen(port, function () {
     console.log('Server is running at port 3001')
 })
 
+
+
 app.use(express.json())
-
-
 
 //GET, POST, PUT, DELETE
 app.use('/', routes)
