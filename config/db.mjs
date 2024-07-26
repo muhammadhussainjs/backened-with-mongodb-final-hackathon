@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
 
-mongoose.connect("mongodb+srv://hussain356q:hussainmemon@cluster0.xha0zoz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb+srv://muhammadhussainharoon:hussain123@cluster0.vssg0ni.mongodb.net")
 
 export default mongoose
