@@ -13,6 +13,15 @@ db.connection.once('open', () => console.log("connected to db")).on("error", (er
 
 app.use('/', routes)
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+  });
+
+  app.get('/', (req, res) => {
+    res.send('Welcome to the API');
+  });
+
 const port = 3001
 
 app.listen(port, function () {
