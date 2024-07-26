@@ -5,7 +5,11 @@ import cors from 'cors'
 const app = express()
 app.use(cors());
 
+app.use(express.json())
+
 db.connection.once('open', () => console.log("connected to db")).on("error", (err) => console.log("error connecting db -->", err))
+
+app.use('/', routes)
 
 const port = 3001
 
@@ -15,7 +19,5 @@ app.listen(port, function () {
 
 
 
-app.use(express.json())
 
 //GET, POST, PUT, DELETE
-app.use('/', routes)
