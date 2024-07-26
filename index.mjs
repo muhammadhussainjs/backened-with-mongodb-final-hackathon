@@ -2,7 +2,9 @@ import express from 'express'
 import db from './config/db.mjs'
 import routes from './routes/index.mjs'
 import cors from 'cors'
+
 const app = express()
+
 app.use(cors());
 
 app.use(express.json())
