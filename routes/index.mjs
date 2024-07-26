@@ -1,7 +1,7 @@
 import express from 'express'
-import users from "./users.mjs"
+import userRoutes from "./users.mjs"
 const router = express.Router()
 
-router.use('/users' , users)
+router.use('/users' , userRoutes)
 
 export default router
