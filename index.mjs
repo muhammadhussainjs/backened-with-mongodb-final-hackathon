@@ -18,9 +18,9 @@ app.use('/', routes)
 //     res.status(500).send('Something broke!');
 //   });
 
-//   app.get('/', (req, res) => {
-//     res.send('Welcome to the API');
-//   });
+  app.get('/', (req, res) => {
+    res.send('Welcome to the API');
+  });
 
 const port = 3001
 
