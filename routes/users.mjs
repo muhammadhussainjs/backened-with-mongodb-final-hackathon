@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
 
         //Step 3: Generate Token
 
-        res.send({ message: "User logged in successfully!" })
+        res.send({ message: "User logged in successfully!"  , email})
     } catch (error) {
         res.send({ message: 'login failed' })
     }
