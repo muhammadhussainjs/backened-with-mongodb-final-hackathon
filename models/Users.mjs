@@ -17,6 +17,10 @@ const usersSchema  = new Schema({
         required:true,
         minLength: 6
     
+    },
+    link:{
+        type: String,
+        required: false
     }
    
     
