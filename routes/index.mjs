@@ -1,9 +1,10 @@
 import express from 'express'
 import user from "./users.mjs"
-import admin from './admin.mjs'
+import Assignment from './assignments.mjs'
 const router = express.Router()
 
 router.use('/users' , user)
-router.use('/admins' , admin)
+router.use('/assignments' , Assignment)
+
 
 export default router

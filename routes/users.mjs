@@ -6,6 +6,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 const router = express.Router()
 
+
+
+
 router.post('/register', async (req, res) => {
     try {
               const user = new Users(req.body)
@@ -24,7 +27,7 @@ router.post('/register', async (req, res) => {
 
 router.get('/', async (req, res) => {
     const users = await Users.find()
-    res.send({ message: 'Data fetched successfully', data: users })
+    res.send({ message: 'Users Data fetched successfully', data: users })
 
 })
 
@@ -69,6 +72,7 @@ router.post('/login', async (req, res) => {
         res.status(500).send({ message: 'Login failed, please try again.' });
     }
 });
+
 
 
 export default router

@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 
-mongoose.connect("mongodb+srv://smit:smitbatch10@cluster0.lqo0mzq.mongodb.net/")
+mongoose.connect("mongodb+srv://hackathon:Hackathon_123@cluster0.hzm55wg.mongodb.net/")
 
 
 export default mongoose
