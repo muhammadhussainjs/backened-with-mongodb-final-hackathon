@@ -4,6 +4,7 @@ import Users from '../models/Users.mjs'
 import jwt from 'jsonwebtoken';
 
 
+
 const router = express.Router()
 
 const authenticateToken = (req, res, next) => {
@@ -48,7 +49,7 @@ router.post('/assignments',authenticateToken , async (req, res) => {
 router.get('/students/:uniqueIdentifier', async (req, res) => {
     try {
         const { uniqueIdentifier } = req.params;
-        const user = await Users.findOne({ classLink: `http://localhost:3000/students/${uniqueIdentifier}` });
+        const user = await Users.findOne({ classLink: `http://localhost:5173/students/${uniqueIdentifier}` });
 
         if (!user) {
             return res.status(404).send({ message: 'Teacher not found!' });
