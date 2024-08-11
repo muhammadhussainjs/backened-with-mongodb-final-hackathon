@@ -39,7 +39,8 @@ router.get('/', async (req, res) => {
 router.get('/user', authenticateToken, async (req, res) => {
     try {
         const teacherId = req.user.id; // Get the authenticated user's ID from the token
-        const assignments = await Users.find({ _id: teacherId });
+        const user = await Users.findById(teacherId);
+
 
         if (assignments.length === 0) {
             return res.status(404).send({ message: 'No assignments found for this user.' });
