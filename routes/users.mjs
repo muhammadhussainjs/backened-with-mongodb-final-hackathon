@@ -82,7 +82,7 @@ router.post('/login', async (req, res) => {
 
         // Step 4: Generate a unique link
         const uniqueIdentifier = uuidv4(); // You can use uuidv4 to generate a unique identifier
-        const classLink = `http://localhost:5173/students/${uniqueIdentifier}`;
+        const classLink = `https://final-hackathon-lf7r.vercel.app/students/${uniqueIdentifier}`;
         
         // Optionally, you can save the link or unique identifier to the user's record in the database
         user.classLink = classLink; // Add a field in your Users model to store this if needed

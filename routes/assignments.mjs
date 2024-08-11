@@ -69,7 +69,7 @@ router.get('/assignments', authenticateToken, async (req, res) => {
 router.get('/students/:uniqueIdentifier', async (req, res) => {
     try {
         const { uniqueIdentifier } = req.params;
-        const user = await Users.findOne({ classLink: `http://localhost:5173/students/${uniqueIdentifier}` });
+        const user = await Users.findOne({ classLink: `https://final-hackathon-lf7r.vercel.app/students/${uniqueIdentifier}` });
 
         if (!user) {
             return res.status(404).send({ message: 'Teacher not found!' });
