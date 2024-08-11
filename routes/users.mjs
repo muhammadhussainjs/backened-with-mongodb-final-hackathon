@@ -39,7 +39,7 @@ router.get('/', async (req, res) => {
 router.get('/user', authenticateToken, async (req, res) => {
     try {
         const teacherId = req.user.id; // Get the authenticated user's ID from the token
-        const user = await Users.findById(teacherId);
+        const assignments = await Users.find({ _id: teacherId });
 
 
         if (assignments.length === 0) {
