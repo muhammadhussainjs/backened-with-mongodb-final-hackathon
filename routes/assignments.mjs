@@ -46,6 +46,25 @@ router.post('/assignments',authenticateToken , async (req, res) => {
     }
 });
 
+router.get('/assignments', authenticateToken, async (req, res) => {
+    try {
+        const teacherId = req.user.id; // Get the authenticated user's ID from the token
+
+        // Find assignments where the teacherId matches the authenticated user's ID
+        const assignments = await Assignment.find({ teacherId: teacherId });
+
+        if (assignments.length === 0) {
+            return res.status(404).send({ message: 'No assignments found for this user.' });
+        }
+
+        res.status(200).send({ message: 'Assignments fetched successfully!', data: assignments });
+    } catch (error) {
+        console.error('Error fetching assignments:', error);
+        res.status(500).send({ message: 'Failed to fetch assignments, please try again.' });
+    }
+});
+
+
 router.get('/students/:uniqueIdentifier', async (req, res) => {
     try {
         const { uniqueIdentifier } = req.params;
@@ -56,7 +75,7 @@ router.get('/students/:uniqueIdentifier', async (req, res) => {
         }
 
         // Assuming you have an Assignment model and collection to fetch assignments
-        const assignments = await Assignment.find({ teacherId: user._id });
+        const assignments = await Assignment.find({ teacherId: user._id }); 
 
         res.status(200).send({ message: 'Assignments fetched successfully', data: assignments });
     } catch (error) {
