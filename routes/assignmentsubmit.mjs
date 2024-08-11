@@ -41,7 +41,7 @@ router.get('/', async (req, res) => {
     res.send({ message: 'Assignment Data fetched successfully',   data: assignment})
 
 })
-router.get('/assignmentsubmit', authenticateToken, async (req, res) => {
+router.get('/assignmentsubmit', authenticateToken,  async (req, res) =>  {
   try {
       const teacherId = req.user.id; // Get the authenticated user's ID from the token
 

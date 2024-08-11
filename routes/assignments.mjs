@@ -31,7 +31,7 @@ router.post('/assignments',authenticateToken , async (req, res) => {
         const { title, description } = req.body;
         const teacherId = req.user.id;
 
-        const newAssignment = new Assignment({
+        const newAssignment = new Assignment({ 
             teacherId,
             title,
             description,
@@ -51,13 +51,14 @@ router.get('/assignments', authenticateToken, async (req, res) => {
         const teacherId = req.user.id; // Get the authenticated user's ID from the token
 
         // Find assignments where the teacherId matches the authenticated user's ID
+        const user = await Users.findById(teacherId);
         const assignments = await Assignment.find({ teacherId: teacherId });
 
         if (assignments.length === 0) {
             return res.status(404).send({ message: 'No assignments found for this user.' });
         }
 
-        res.status(200).send({ message: 'Assignments fetched successfully!', data: assignments });
+        res.status(200).send({ message: 'Assignments fetched successfully!', data: assignments , user: user});
     } catch (error) {
         console.error('Error fetching assignments:', error);
         res.status(500).send({ message: 'Failed to fetch assignments, please try again.' });
