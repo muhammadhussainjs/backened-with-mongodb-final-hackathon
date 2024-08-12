@@ -66,8 +66,7 @@ router.get('/students/:uniqueIdentifier', async (req, res) => {
         const { uniqueIdentifier } = req.params;
         console.log('Received uniqueIdentifier:', uniqueIdentifier);
 
-        // Search by the uniqueIdentifier, not the full URL
-        const user = await Users.findOne({ classLink: { $regex: uniqueIdentifier, $options: 'i' } });
+        const user = await Users.findOne({ classLink: `https://final-hackathon-lf7r.vercel.app/students/${uniqueIdentifier}` });
         console.log('Found user:', user);
 
         if (!user) {
