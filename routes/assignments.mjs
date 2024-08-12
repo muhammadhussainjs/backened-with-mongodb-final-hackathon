@@ -66,7 +66,7 @@ router.get('/students/:uniqueIdentifier', async (req, res) => {
         const { uniqueIdentifier } = req.params;
         console.log('Received uniqueIdentifier:', uniqueIdentifier);
 
-        const user = await Users.findOne({ classLink: `http://final-hackathon-lf7r.vercel.app/students/${uniqueIdentifier}` });
+        const user = await Users.findOne({ classLink: `https://final-hackathon-lf7r.vercel.app/students/${uniqueIdentifier}` });
         console.log('Found user:', user);
 
         if (!user) {
