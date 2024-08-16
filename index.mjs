@@ -5,9 +5,8 @@ import cors from 'cors'
 
 const app = express()
 
-app.use(cors({
-  origin: 'https://final-hackathon-lf7r.vercel.app/'
-}));
+app.use(cors());
+
 app.use(express.json())
 
 db.connection.once('open', () => console.log("connected to db")).on("error", (err) => console.log("error connecting db -->", err))
