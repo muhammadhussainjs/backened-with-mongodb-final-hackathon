@@ -8,16 +8,19 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)", 
+      "src": "/api/(.*)",
       "dest": "/index.mjs"
     },
     {
-      "src": "/students/(.*)", 
+      "src": "/students/(.*)",
       "dest": "/index.mjs"
     },
     {
       "src": "/(.*)",
       "dest": "/index.mjs"
     }
+  ],
+  "rewrites": [
+    { "source": "/students/:uniqueIdentifier", "destination": "/api/students/:uniqueIdentifier" }
   ]
 }
