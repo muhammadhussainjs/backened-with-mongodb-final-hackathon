@@ -6,7 +6,7 @@ import cors from 'cors'
 const app = express()
 
 app.use(cors({
-  origin: 'https://final-hackathon-lf7r.vercel.app'
+  origin: 'https://final-hackathon-lf7r.vercel.app/'
 }));
 app.use(express.json())
 
