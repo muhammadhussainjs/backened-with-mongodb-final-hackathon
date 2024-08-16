@@ -61,20 +61,20 @@ router.get('/assignments', authenticateToken, async (req, res) => {
     }
 });
 
-router.get('/student/uniqueIdentifier', async (req, res) => {
+router.get('/students/uniqueIdentifier', async (req, res) => {
     try {
         const { uniqueIdentifier } = req.params;
         console.log('Received uniqueIdentifier:', uniqueIdentifier);
 
-        const user = await Users.findOne({ classLink: `https://final-hackathon-lf7r.vercel.app/student/${uniqueIdentifier}` });
-        console.log('Found user:', user);
+        // const user = await Users.findOne({ classLink: `https://final-hackathon-lf7r.vercel.app/students/${uniqueIdentifier}` });
+        // console.log('Found user:', user);
 
-        if (!user) {
-            return res.status(404).send({ message: 'User not found!' });
-        }
+        // if (!user) {
+        //     return res.status(404).send({ message: 'User not found!' });
+        // }
 
-        const assignments = await Assignment.find({ teacherId: user._id });
-        res.status(200).send({ message: 'Assignments fetched successfully', data: assignments });
+        // const assignments = await Assignment.find({ teacherId: user._id });
+        res.status(200).send({ message: 'Assignments fetched successfully' });
     } catch (error) {
         console.error('Error fetching assignments:', error);
         res.status(500).send({ message: 'Failed to fetch assignments, please try again.' });
