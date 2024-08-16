@@ -61,7 +61,7 @@ router.get('/assignments', authenticateToken, async (req, res) => {
     }
 });
 
-router.get('/student/:uniqueIdentifier', async (req, res) => {
+router.get('/student/uniqueIdentifier', async (req, res) => {
     try {
         const { uniqueIdentifier } = req.params;
         console.log('Received uniqueIdentifier:', uniqueIdentifier);
