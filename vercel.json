@@ -12,15 +12,8 @@
       "dest": "/index.mjs"
     },
     {
-      "src": "/students/(.*)",
-      "dest": "/index.mjs"
-    },
-    {
       "src": "/(.*)",
       "dest": "/index.mjs"
     }
-  ],
-  "rewrites": [
-    { "source": "/students/:uniqueIdentifier", "destination": "/api/students/:uniqueIdentifier" }
   ]
 }
