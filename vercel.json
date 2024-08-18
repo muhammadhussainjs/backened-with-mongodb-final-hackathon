@@ -6,21 +6,10 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/index.mjs"
-    },
-    {
-      "src": "/students/(.*)",
-      "dest": "/index.mjs"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.mjs"
-    }
-  ],
   "rewrites": [
-    { "source": "/students/:uniqueIdentifier", "destination": "/api/students/:uniqueIdentifier" }
+    { "source": "/students/:uniqueIdentifier", "destination": "/api/students/:uniqueIdentifier" },
+    { "source": "/users", "destination": "/api/users" },
+    { "source": "/assignments", "destination": "/api/assignments" }
+    { "source": "/assignmentsubmit", "destination": "/api/assignmentsubmit" }
   ]
 }
