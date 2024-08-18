@@ -74,7 +74,7 @@ router.get('/students/:uniqueIdentifier', async (req, res) => {
         }
 
         const assignments = await Assignment.find({ teacherId: user._id });
-        res.status(200).send({ message: 'Assignments fetched successfully' });
+        res.status(200).send({ message: 'Assignments fetched successfully', data: assignments });
     } catch (error) {
         console.error('Error fetching assignments:', error);
         res.status(500).send({ message: 'Failed to fetch assignments, please try again.' });
