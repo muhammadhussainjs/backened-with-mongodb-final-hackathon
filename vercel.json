@@ -1,16 +1,30 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "index.mjs",
-        "use": "@vercel/node"
-      }
-    ],
-    "rewrites": [
-      {
-        "source": "/students/:uniqueIdentifier",
-        "destination": "/index.mjs"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.mjs",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/App.js",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/index.mjs"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.mjs"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/assignments",
+      "destination": "/"
+    }
+  ]
+}
