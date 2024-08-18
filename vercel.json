@@ -7,7 +7,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/students/:uniqueIdentifier", "destination": "/api/students/:uniqueIdentifier" },
+    { "source": "api/students/:uniqueIdentifier", "destination": "/api/students/:uniqueIdentifier" },
     { "source": "/users", "destination": "/api/users" },
     { "source": "/assignments", "destination": "/api/assignments" }
     { "source": "/assignmentsubmit", "destination": "/api/assignmentsubmit" }
