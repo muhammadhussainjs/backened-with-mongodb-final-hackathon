@@ -1,7 +1,10 @@
 import mongoose from "mongoose"
+import dotenv from 'dotenv'
 
+dotenv.config();
+const mongoURI = process.env.MONGODB_URI
 
-mongoose.connect("mongodb+srv://hackathons:Hackathon_1234@cluster0.hzm55wg.mongodb.net/")
+mongoose.connect(mongoURI)
 
 
 export default mongoose
