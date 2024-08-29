@@ -18,14 +18,16 @@ const authenticateToken = (req, res, next) => {
 };
 
 router.post('/assignmentsubmits' , async (req , res)=>{
-    const { title, description, link , teacherId } = req.body;
+    const { title, description, link , teacherId , name , email } = req.body;
 
   try {
     const newSubmission = new AssignmentSubmit({
       title,
       description,
       link,
-      teacherId
+      teacherId, 
+      name,
+      email
     });
 
     await newSubmission.save();
