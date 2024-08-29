@@ -19,8 +19,8 @@ const assignmentSchema = new Schema({
         required: true,
     },
     createdAt: {
-        type: Date,
-        default: () => moment.tz(Date.now(), "Asia/Karachi").toDate(),
+        type: String,  
+        default: () => new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }), 
     },
 });
 
