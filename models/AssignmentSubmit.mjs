@@ -18,6 +18,14 @@ const assignmentSubmit = new Schema({
         type: String,
         required: true
     },
+    name:{
+        type : String,
+        required : true
+    },
+    email:{
+        type:String,
+        required: true
+    },
     createdAt: {
         type: String,  
         default: () => new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }), 
