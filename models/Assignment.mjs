@@ -1,5 +1,6 @@
 
 import mongoose from 'mongoose';
+import moment from 'moment-timezone'
 
 const { Schema } = mongoose;
 
@@ -19,7 +20,7 @@ const assignmentSchema = new Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now,
+        default: () => moment.tz(Date.now(), "Asia/Karachi").toDate(),
     },
 });
 
