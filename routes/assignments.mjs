@@ -66,7 +66,7 @@ router.get('/students/:uniqueIdentifier', async (req, res) => {
         const { uniqueIdentifier } = req.params;
         console.log('Received uniqueIdentifier:', uniqueIdentifier);
 
-        const user = await Users.findOne({ classLink: `https://smit-classroom-tdqo.vercel.app/students/${uniqueIdentifier}` });
+        const user = await Users.findOne({ classLink: `https://smitclassroom.vercel.app/students/${uniqueIdentifier}` });
         console.log('Found user:', user);
 
         if (!user) {
